@@ -4,6 +4,7 @@ conteneur_name="pelican-test"
 image_name="debian-pelican-plus"
 
 docker rm -f  $conteneur_name
+docker image rm $image_name
 
 docker build -t $image_name .
 

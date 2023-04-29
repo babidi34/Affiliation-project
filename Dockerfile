@@ -7,4 +7,4 @@ RUN pelican content
 EXPOSE 8000
 
 # Lancer Pelican
-CMD ["pelican", "-l", "."]
+CMD ["sh", "-c", "pelican content && pelican -l ."]
