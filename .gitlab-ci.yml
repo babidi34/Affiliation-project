@@ -1,0 +1,20 @@
+image: babidi34/debian-docker:debian-11
+
+services:
+  - docker:dind
+
+variables:
+  DOCKER_HOST: tcp://docker:2375
+  DOCKER_DRIVER: overlay2
+
+stages:
+  - test_docker
+
+test_docker:
+  stage: test_docker
+  script: docker build -t debian-pelican-plus . && docker run -tid --name pelican-test debian-pelican-plus
+
+  only:
+    - master
+  tags:
+    - docker

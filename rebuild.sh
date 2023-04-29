@@ -1,4 +1,5 @@
 #!/bin/bash
+# I use this script for my tests
 
 conteneur_name="pelican-test"
 image_name="debian-pelican-plus"
